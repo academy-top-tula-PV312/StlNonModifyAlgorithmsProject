@@ -35,7 +35,7 @@ int main()
 
     std::vector<int> v1(size);
     std::generate(v1.begin(), v1.end(), []() { return rand() % 10; }); //RandInt);
-    Print("Vector: ", v1);
+    //Print("Vector: ", v1);
 
     //std::cout << std::boolalpha;
     //std::cout << std::all_of(v1.begin(),
@@ -119,17 +119,34 @@ int main()
     else
         std::cout << "Not found\n";*/
 
-
-    std::cout << "Input value: ";
+    /*std::cout << "Input value: ";
     int key;
     std::cin >> key;
 
     std::cout << std::count(v1.begin(), v1.end(), key) << "\n";
     std::cout << std::count_if(v1.begin(), v1.end(),
         [key](auto item) { return item > key; }
-        );
+        );*/
 
+    std::vector<int> v5{ 5, 1, 2, 6, 6, 6, 6, 1, 2, 3, 0 };
+    std::list<int> l5{ 1, 2, 3 };
 
+    //auto result = std::mismatch(v5.begin() + 2, v5.end(), ++l5.begin());
+    //auto result = std::equal(v5.begin() + 2, v5.end(), ++l5.begin());
+    //auto result = std::search(v5.begin(), v5.end(), l5.begin(), l5.end());
+    auto result = std::search_n(v5.begin(), v5.end(), 5, 6);
+
+    //std::cout << *result.first << " " << *result.second << "\n";
+    //std::cout << result << "\n";
+    if (result != v5.end())
+    {
+        for (; result != v5.end(); result++)
+            std::cout << *result << " ";
+        std::cout << "\n";
+    }
+    else
+        std::cout << "not found\n";
+    
 
 
 
