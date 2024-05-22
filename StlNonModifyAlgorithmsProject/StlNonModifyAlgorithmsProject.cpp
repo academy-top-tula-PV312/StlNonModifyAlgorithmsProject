@@ -128,13 +128,13 @@ int main()
         [key](auto item) { return item > key; }
         );*/
 
-    std::vector<int> v5{ 5, 1, 2, 6, 6, 6, 6, 1, 2, 3, 0 };
+    std::vector<int> v5{ 5, 1, 2, 6, 6, 6, 6, 1, 3, 3, 0 };
     std::list<int> l5{ 1, 2, 3 };
 
     //auto result = std::mismatch(v5.begin() + 2, v5.end(), ++l5.begin());
     //auto result = std::equal(v5.begin() + 2, v5.end(), ++l5.begin());
     //auto result = std::search(v5.begin(), v5.end(), l5.begin(), l5.end());
-    auto result = std::search_n(v5.begin(), v5.end(), 5, 6);
+    auto result = std::search_n(v5.begin(), v5.end(), 2, 3);
 
     //std::cout << *result.first << " " << *result.second << "\n";
     //std::cout << result << "\n";
